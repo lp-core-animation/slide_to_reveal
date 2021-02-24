@@ -16,6 +16,13 @@ class AnimatedMaskLabel: UIView {
     gradientLayer.locations = locations
     return gradientLayer
   }()
+
+  let textAttributes: [NSAttributedString.Key: Any] = {
+    let style = NSMutableParagraphStyle()
+    style.alignment = .center
+    return [.font: UIFont(name: "HelveticaNeue-Thin",size: 28.0)!,
+            .paragraphStyle: style]
+  }()
   
   @IBInspectable var text: String! {
     didSet {
