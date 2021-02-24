@@ -31,7 +31,12 @@ class AnimatedMaskLabel: UIView {
   
   override func didMoveToWindow() {
     super.didMoveToWindow()
-    
+    let gradientAnimation = CABasicAnimation(keyPath: "locations")
+    gradientAnimation.fromValue = [0.0, 0.0, 0.25]
+    gradientAnimation.toValue = [0.75, 1.0, 1.0]
+    gradientAnimation.duration = 3.0
+    gradientAnimation.repeatCount = Float.infinity
+    gradientLayer.add(gradientAnimation, forKey: nil)
   }
   
 }
